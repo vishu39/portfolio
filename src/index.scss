@@ -1,0 +1,29 @@
+@import "./styles/breakpoint";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// html {
+//   font-size: 60%;
+//   @include xs {
+//     font-size: 60%;
+//   }
+//   @include sm {
+//     font-size: 62.5%;
+//   }
+//   @include md {
+//     font-size: 65%;
+//   }
+//   @include lg {
+//     font-size: 68%;
+//   }
+//   @include xl {
+//     font-size: 72.5%;
+//   }
+//   @include xxl {
+//     font-size: 75%;
+//   }
+// }
