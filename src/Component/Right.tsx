@@ -1,3 +1,4 @@
+import AboutMe from "./Content/AboutMe";
 import Home from "./Home";
 import Toolbar from "./Toolbar";
 import "./right.scss";
@@ -10,6 +11,7 @@ const Right = () => {
       </div>
       <div className="main">
         <Home />
+        <AboutMe/>
       </div>
     </div>
   );
