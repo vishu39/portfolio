@@ -18,14 +18,21 @@ body {
   .left {
     display: none;
     @include md {
-      width: 15%;
+      width: 25%;
+      display: block;
+    }
+    @include lg {
+      width: 20%;
       display: block;
     }
   }
   .right {
     width: 100%;
     @include md {
-      width: 85%;
+      width: 75%;
+    }
+    @include lg {
+      width: 80%;
     }
   }
 }
