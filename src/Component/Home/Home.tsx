@@ -1,3 +1,10 @@
+import {
+  LinkedinOutlined,
+  GithubOutlined,
+  FacebookOutlined,
+  InstagramOutlined,
+} from "@ant-design/icons";
+import { Button } from "antd";
 import { personal_details } from "../../Helper/data";
 import "./home.scss";
 
@@ -10,6 +17,23 @@ const Home = () => {
       <p className="para">
         I am a <span className="base animate-fd">Frontend Developer</span>
       </p>
+      <div className="icons-div">
+        <LinkedinOutlined
+          className="icon"
+          onClick={() => {
+            window.open("https://github.com/vishu39", "_blank");
+          }}
+        />
+        <GithubOutlined
+          className="icon"
+          onClick={() => {
+            window.open("https://github.com/vishu39", "_blank");
+          }}
+        />
+        <FacebookOutlined className="icon" />
+        <InstagramOutlined className="icon" />
+      </div>
+      <Button className="cv_button">Download Cv</Button>
     </div>
   );
 };
