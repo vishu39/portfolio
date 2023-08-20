@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.5",
   "type": "module",
-  "homepage": ".",
+  "homepage": "https://vishu39.github.io/portfolio/home",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",

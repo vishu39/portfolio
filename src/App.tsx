@@ -10,5 +10,3 @@ function App() {
 }
 
 export default App;
-
-// "homepage": "https://vishu39.github.io/portfolio",
