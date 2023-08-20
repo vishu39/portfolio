@@ -1,18 +1,23 @@
 import "./App.scss";
-import Left from "./Component/Left";
-import Right from "./Component/Right";
+import AboutMe from "./NewComponent/AboutMe/AboutMe";
+import HomePage from "./NewComponent/Home/HomePage";
 
 function App() {
   return (
     <div className="app-main">
-      <div className="left">
-        <Left />
-      </div>
-      <div className="right">
-        <Right />
-      </div>
+      <HomePage />
+      <AboutMe />
     </div>
   );
 }
 
 export default App;
+
+{
+  /* <div className="left">
+  <Left />
+</div>
+<div className="right">
+  <Right />
+</div> */
+}
