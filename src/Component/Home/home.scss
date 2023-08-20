@@ -1,0 +1,54 @@
+@import "../../styles/breakpoint";
+
+.home_main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(24, 24, 24);
+  color: white;
+  .heading {
+    letter-spacing: 5px;
+    font-size: 25px;
+    color: #00a3e1;
+    margin-bottom: 0;
+    @include sm {
+      letter-spacing: 6px;
+      font-size: 35px;
+    }
+    @include md {
+      letter-spacing: 8px;
+      font-size: 45px;
+    }
+    @include lg {
+      letter-spacing: 10px;
+      font-size: 55px;
+    }
+  }
+  .para {
+    letter-spacing: 3px;
+    font-size: 18px;
+    @include sm {
+      letter-spacing: 3px;
+      font-size: 22px;
+    }
+    @include md {
+      letter-spacing: 4px;
+      font-size: 25px;
+    }
+    @include lg {
+      letter-spacing: 5px;
+      font-size: 30px;
+    }
+    .base {
+      color: #00a3e1;
+    }
+    .base::before {
+      position: absolute;
+      color: #00a3e1;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
