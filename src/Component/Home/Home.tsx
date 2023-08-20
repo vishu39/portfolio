@@ -1,5 +1,5 @@
-import { personal_details } from "../Helper/data";
-import "./Content/home.scss";
+import { personal_details } from "../../Helper/data";
+import "./home.scss";
 
 const Home = () => {
   return (
