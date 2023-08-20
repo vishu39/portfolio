@@ -7,16 +7,21 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import "./Sidebar.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tooltip } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar }: any) => {
-  const [selected, setSelected] = useState("home");
+  const [selected, setSelected] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
+
+  useEffect(() => {
+    setSelected(pathname.split("/")?.[1]);
+  }, [pathname]);
 
   const setSelectedNav = (selectedNav: string) => {
-    setSelected(selectedNav);
     navigate(selectedNav);
   };
 
