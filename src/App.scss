@@ -1,6 +1,6 @@
 @import "./styles/breakpoint";
 
-body {
+* {
   box-sizing: border-box;
   // background-color: black;
   // color: rgb(255, 255, 255);
@@ -14,25 +14,4 @@ body {
   bottom: 0;
   height: 100%;
   width: 100%;
-  display: flex;
-  .left {
-    display: none;
-    @include md {
-      width: 25%;
-      display: block;
-    }
-    @include lg {
-      width: 20%;
-      display: block;
-    }
-  }
-  .right {
-    width: 100%;
-    @include md {
-      width: 75%;
-    }
-    @include lg {
-      width: 80%;
-    }
-  }
 }

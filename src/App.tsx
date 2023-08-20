@@ -1,16 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.scss";
-import Left from "./Component/Left";
-import Right from "./Component/Right";
+import Layout from "./Component/Layout/Layout";
 
 function App() {
   return (
     <div className="app-main">
-      <div className="left">
-        <Left />
-      </div>
-      <div className="right">
-        <Right />
-      </div>
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
     </div>
   );
 }
