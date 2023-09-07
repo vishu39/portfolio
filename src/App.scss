@@ -1,8 +1,10 @@
 @import "./styles/breakpoint";
 
-// * {
-//   box-sizing: border-box;
-// }
+* {
+  box-sizing: border-box;
+  // background-color: black;
+  // color: rgb(255, 255, 255);
+}
 
 .app-main {
   position: absolute;

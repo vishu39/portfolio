@@ -1,9 +1,9 @@
 {
   "name": "portfolio-vishu",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.6",
   "type": "module",
-  "homepage": "https://vishu39.github.io/portfolio",
+  "homepage": "https://vishu39.github.io/portfolio/home",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
