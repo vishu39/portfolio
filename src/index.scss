@@ -3,27 +3,31 @@
 body {
   margin: 0;
   padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+* {
   box-sizing: border-box;
 }
 
-// html {
-//   font-size: 60%;
-//   @include xs {
-//     font-size: 60%;
-//   }
-//   @include sm {
-//     font-size: 62.5%;
-//   }
-//   @include md {
-//     font-size: 65%;
-//   }
-//   @include lg {
-//     font-size: 68%;
-//   }
-//   @include xl {
-//     font-size: 72.5%;
-//   }
-//   @include xxl {
-//     font-size: 75%;
-//   }
-// }
+#root {
+  height: 100%;
+}
+
+.hide-scrollbar {
+  overflow: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}

@@ -1,0 +1,59 @@
+.main {
+    background-color: black;
+    height: 100%;
+    overflow-y: scroll;
+
+    .nav {
+        display: flex;
+        gap: 40px;
+        padding: 24px;
+        background-color: #cc005f;
+        color: white;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        top: 0;
+
+        .navList {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .content {
+        #homeMain {
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .btnDiv {
+                display: flex;
+                justify-content: center;
+
+                .moreAboutMeBtn {
+                    padding: 12px;
+                    background-color: #cc005f;
+                    color: white;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    border: 1px solid white;
+
+                    .icon {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
