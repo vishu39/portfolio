@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 import './layout.scss';
 import { DownOutlined } from '@ant-design/icons';
 
 const Layout = () => {
-  const [collapsed, setCollapsed] = useState(JSON.parse(localStorage.getItem("isCollapsed")));
+  // const [collapsed, setCollapsed] = useState(JSON.parse(localStorage.getItem("isCollapsed")));
 
-  const toggleSidebar = () => {
-    // setCollapsed(!collapsed);
-    let collapse: boolean = !collapsed
-    localStorage.setItem("isCollapsed", JSON.stringify(collapse))
-  };
+  // const toggleSidebar = () => {
+  //   // setCollapsed(!collapsed);
+  //   let collapse: boolean = !collapsed
+  //   localStorage.setItem("isCollapsed", JSON.stringify(collapse))
+  // };
 
-  useEffect(() => {
-    let collapse = localStorage.getItem('isCollapsed')
-    console.log(collapse);
-  }, [collapsed])
+  // useEffect(() => {
+  //   let collapse = localStorage.getItem('isCollapsed')
+  //   console.log(collapse);
+  // }, [collapsed])
 
   return (
     <div className='main hide-scrollbar'>
