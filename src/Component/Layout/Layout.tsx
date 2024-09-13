@@ -1,51 +1,85 @@
 // import { useEffect, useState } from 'react'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import useWindowSize from '../../Hooks/useWindowSize';
 import './layout.scss';
-import { DownOutlined, FacebookOutlined, HistoryOutlined, HomeOutlined, InstagramOutlined, LinkedinOutlined, MailOutlined, MenuOutlined, MergeOutlined, SnippetsOutlined } from '@ant-design/icons';
+import { HistoryOutlined, HomeOutlined, MailOutlined, MenuOutlined, MergeOutlined, SnippetsOutlined } from '@ant-design/icons';
 import { Dropdown, MenuProps } from 'antd';
-
-const items: MenuProps['items'] = [
-  {
-    label: <div style={{ marginLeft: "24px" }}><HomeOutlined style={{ marginRight: "12px" }} /> Home</div>,
-    key: '0',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: <div style={{ marginLeft: "24px" }}><MergeOutlined style={{ marginRight: "12px" }} /> About</div>,
-    key: '1',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: <div style={{ marginLeft: "24px" }}><HistoryOutlined style={{ marginRight: "12px" }} /> Services</div>,
-    key: '2',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: <div style={{ marginLeft: "24px" }}><SnippetsOutlined style={{ marginRight: "12px" }} /> Resume</div>,
-    key: '3',
-  },
-  {
-    type: 'divider',
-  },
-  {
-    label: <div style={{ marginLeft: "24px" }}><MailOutlined style={{ marginRight: "12px" }} /> Contact</div>,
-    key: '4',
-  },
-];
+import Home from '../Home/Home';
+import Contact from '../ContactUs/Contact';
+import About from '../AboutUs/About';
+import Service from '../Services/Service';
+import Resume from '../Resume/Resume';
 
 const Layout = () => {
+
+  const homeRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const serviceRef = useRef<HTMLDivElement>(null);
+  const resumeRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const { width } = useWindowSize();
 
   useEffect(() => {
   }, [width])
+
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
+  const items: MenuProps['items'] = [
+    {
+      label: <div style={{ marginLeft: "24px" }}><HomeOutlined style={{ marginRight: "12px" }} /> Home</div>,
+      key: '0',
+      onClick: (info: any) => {
+        scrollToSection(homeRef)
+      }
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: <div style={{ marginLeft: "24px" }}><MergeOutlined style={{ marginRight: "12px" }} /> About</div>,
+      key: '1',
+      onClick: (info: any) => {
+        scrollToSection(aboutRef)
+      }
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: <div style={{ marginLeft: "24px" }}><HistoryOutlined style={{ marginRight: "12px" }} /> Services</div>,
+      key: '2',
+      onClick: (info: any) => {
+        scrollToSection(serviceRef)
+      }
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: <div style={{ marginLeft: "24px" }}><SnippetsOutlined style={{ marginRight: "12px" }} /> Resume</div>,
+      key: '3',
+      onClick: (info: any) => {
+        scrollToSection(resumeRef)
+      }
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: <div style={{ marginLeft: "24px" }}><MailOutlined style={{ marginRight: "12px" }} /> Contact</div>,
+      key: '4',
+      onClick: (info: any) => {
+        scrollToSection(contactRef)
+      }
+    },
+  ];
+
 
 
   return (
@@ -64,11 +98,11 @@ const Layout = () => {
             <div className='navList' style={{
               width: "60%"
             }}>
-              <span>Home</span>
-              <span>About</span>
-              <span>Services</span>
-              <span>Resume</span>
-              <span>Contact</span>
+              <span onClick={() => scrollToSection(homeRef)}>Home</span>
+              <span onClick={() => scrollToSection(aboutRef)}>About</span>
+              <span onClick={() => scrollToSection(serviceRef)}>Services</span>
+              <span onClick={() => scrollToSection(resumeRef)}>Resume</span>
+              <span onClick={() => scrollToSection(contactRef)}>Contact</span>
             </div>
             : <div>
               <Dropdown overlayStyle={{ width: '50%' }} menu={{ items }} trigger={['click']}>
@@ -80,24 +114,11 @@ const Layout = () => {
         </div>
       </header>
       <div className="content">
-        <div id='homeMain'>
-          <p style={{ color: "#cc005f" }}> HELLO, WORLD.</p>
-          <h1>I'm Vishu Sharma.</h1>
-          <div>
-            <p>| Front-End Devloper |</p>
-          </div>
-
-          <div className='btnDiv'>
-            <button className='moreAboutMeBtn'>More About Me <DownOutlined className='icon' /></button>
-          </div>
-
-          <div style={{ marginTop: "80px", display: "flex", justifyContent: "space-evenly", width: "100%" }}>
-            <FacebookOutlined style={{ color: "#cc005f", cursor: "pointer", fontSize: "30px", borderRadius: "5px" }} />
-            <InstagramOutlined style={{ color: "#cc005f", cursor: "pointer", fontSize: "30px", borderRadius: "5px" }} />
-            <LinkedinOutlined style={{ color: "#cc005f", cursor: "pointer", fontSize: "30px", borderRadius: "5px" }} />
-          </div>
-
-        </div>
+        <Home ref={homeRef} />
+        <About ref={aboutRef} />
+        <Service ref={serviceRef} />
+        <Resume ref={resumeRef} />
+        <Contact ref={contactRef} />
       </div>
     </div>
   )

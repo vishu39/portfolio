@@ -1,0 +1,32 @@
+@import "../../styles/breakpoint";
+
+#aboutMain {
+    height: 100vh;
+    background-color: lightgrey;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    //   .btnDiv {
+    //     display: flex;
+    //     justify-content: center;
+
+    //     .moreAboutMeBtn {
+    //       padding: 12px;
+    //       background-color: #cc005f;
+    //       color: white;
+    //       border-radius: 8px;
+    //       cursor: pointer;
+    //       display: flex;
+    //       align-items: center;
+    //       gap: 12px;
+    //       border: 1px solid white;
+
+    //       .icon {
+    //         font-size: 12px;
+    //       }
+    //     }
+    //   }
+}

@@ -1,41 +1,33 @@
 import {
   LinkedinOutlined,
-  GithubOutlined,
   FacebookOutlined,
   InstagramOutlined,
+  DownOutlined,
 } from "@ant-design/icons";
-import { Button } from "antd";
-import { personal_details } from "../../Helper/data";
 import "./home.scss";
+import { forwardRef } from "react";
 
-const Home = () => {
+const Home = forwardRef<HTMLDivElement, any>((props, ref) => {
   return (
-    <div className="home_main">
-      <h1 className="heading">
-        {personal_details?.first_name} {personal_details?.last_name}
-      </h1>
-      <p className="para">
-        I am a <span className="base animate-fd">Frontend Developer</span>
-      </p>
-      <div className="icons-div">
-        <LinkedinOutlined
-          className="icon"
-          onClick={() => {
-            window.open("https://github.com/vishu39", "_blank");
-          }}
-        />
-        <GithubOutlined
-          className="icon"
-          onClick={() => {
-            window.open("https://github.com/vishu39", "_blank");
-          }}
-        />
-        <FacebookOutlined className="icon" />
-        <InstagramOutlined className="icon" />
+    <div ref={ref} id='homeMain'>
+      <p style={{ color: "#cc005f" }}> HELLO, WORLD.</p>
+      <h1>I'm Vishu Sharma.</h1>
+      <div>
+        <p>| Front-End Devloper |</p>
       </div>
-      <Button className="cv_button">Download Cv</Button>
+
+      <div className='btnDiv'>
+        <button className='moreAboutMeBtn'>More About Me <DownOutlined className='icon' /></button>
+      </div>
+
+      <div style={{ marginTop: "80px", display: "flex", justifyContent: "space-evenly", width: "100%" }}>
+        <FacebookOutlined style={{ color: "#cc005f", cursor: "pointer", fontSize: "30px", borderRadius: "5px" }} />
+        <InstagramOutlined style={{ color: "#cc005f", cursor: "pointer", fontSize: "30px", borderRadius: "5px" }} />
+        <LinkedinOutlined style={{ color: "#cc005f", cursor: "pointer", fontSize: "30px", borderRadius: "5px" }} />
+      </div>
+
     </div>
   );
-};
+});
 
 export default Home;
