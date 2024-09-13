@@ -34,7 +34,7 @@ const Layout = () => {
     {
       label: <div style={{ marginLeft: "24px" }}><HomeOutlined style={{ marginRight: "12px" }} /> Home</div>,
       key: '0',
-      onClick: (info: any) => {
+      onClick: () => {
         scrollToSection(homeRef)
       }
     },
@@ -44,7 +44,7 @@ const Layout = () => {
     {
       label: <div style={{ marginLeft: "24px" }}><MergeOutlined style={{ marginRight: "12px" }} /> About</div>,
       key: '1',
-      onClick: (info: any) => {
+      onClick: () => {
         scrollToSection(aboutRef)
       }
     },
@@ -54,7 +54,7 @@ const Layout = () => {
     {
       label: <div style={{ marginLeft: "24px" }}><HistoryOutlined style={{ marginRight: "12px" }} /> Services</div>,
       key: '2',
-      onClick: (info: any) => {
+      onClick: () => {
         scrollToSection(serviceRef)
       }
     },
@@ -64,7 +64,7 @@ const Layout = () => {
     {
       label: <div style={{ marginLeft: "24px" }}><SnippetsOutlined style={{ marginRight: "12px" }} /> Resume</div>,
       key: '3',
-      onClick: (info: any) => {
+      onClick: () => {
         scrollToSection(resumeRef)
       }
     },
@@ -74,7 +74,7 @@ const Layout = () => {
     {
       label: <div style={{ marginLeft: "24px" }}><MailOutlined style={{ marginRight: "12px" }} /> Contact</div>,
       key: '4',
-      onClick: (info: any) => {
+      onClick: () => {
         scrollToSection(contactRef)
       }
     },

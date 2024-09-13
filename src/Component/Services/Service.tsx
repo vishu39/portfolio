@@ -1,7 +1,7 @@
 import { forwardRef } from "react"
 import "./service.scss"
 
-const Service = forwardRef<HTMLDivElement, any>((props, ref) => {
+const Service = forwardRef<HTMLDivElement, any>((ref) => {
     return (
         <div ref={ref} id="serviceMain">Service</div>
     )

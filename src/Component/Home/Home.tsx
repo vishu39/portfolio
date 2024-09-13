@@ -7,7 +7,7 @@ import {
 import "./home.scss";
 import { forwardRef } from "react";
 
-const Home = forwardRef<HTMLDivElement, any>((props, ref) => {
+const Home = forwardRef<HTMLDivElement, any>((ref) => {
   return (
     <div ref={ref} id='homeMain'>
       <p style={{ color: "#cc005f" }}> HELLO, WORLD.</p>
