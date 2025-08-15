@@ -1,0 +1,13 @@
+name: Trigger Vercel Deploy Hook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-vercel-hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl deploy hook
+        run: curl -X POST portfolio-reka-ag225trz0-vishu-sharmas-projects.vercel.app

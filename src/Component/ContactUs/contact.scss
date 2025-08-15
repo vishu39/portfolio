@@ -1,29 +1,99 @@
 #contactMain {
-    height: 100vh;
+  height: 100vh;
+  color: white;
+  padding: 24px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  // .btnDiv {
+  //   display: flex;
+  //   justify-content: center;
+
+  //   .moreAboutMeBtn {
+  //     padding: 12px;
+  //     background-color: #cc005f;
+  //     color: white;
+  //     border-radius: 8px;
+  //     cursor: pointer;
+  //     display: flex;
+  //     align-items: center;
+  //     gap: 12px;
+  //     border: 1px solid white;
+
+  //     .icon {
+  //       font-size: 12px;
+  //     }
+  //   }
+  // }
+
+  .commonIconCss {
+    width: 50px;
+    height: 50px;
+    background-color: #cc005f;
     color: white;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid white;
+  }
 
-    // .btnDiv {
-    //   display: flex;
-    //   justify-content: center;
+  .grid1x2 {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 24px;
+    .left {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 60px;
+      .addressDiv {
+        display: flex;
+        // align-items: center;
+        gap: 12px;
+        h4 {
+          font-size: 18px;
+          margin-top: 0;
+          margin-bottom: 5px;
+        }
+      }
+      .phoneDiv {
+        display: flex;
+        // align-items: center;
+        gap: 12px;
+        h4 {
+          font-size: 18px;
+          margin-top: 0;
+          margin-bottom: 5px;
+        }
+      }
+      .mailDiv {
+        display: flex;
+        // align-items: center;
+        gap: 12px;
+        h4 {
+          font-size: 18px;
+          margin-top: 0;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .right {
+      width: 100%;
 
-    //   .moreAboutMeBtn {
-    //     padding: 12px;
-    //     background-color: #cc005f;
-    //     color: white;
-    //     border-radius: 8px;
-    //     cursor: pointer;
-    //     display: flex;
-    //     align-items: center;
-    //     gap: 12px;
-    //     border: 1px solid white;
+      .contactCard {
+        min-height: 200px;
+        border-radius: 10px;
+        background-color: #cc005f;
+        color: white;
+        padding: 12px 24px;
 
-    //     .icon {
-    //       font-size: 12px;
-    //     }
-    //   }
-    // }
+        .heading {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
