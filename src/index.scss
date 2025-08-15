@@ -1,4 +1,4 @@
-@import "./styles/breakpoint";
+@use "./styles/breakpoint" as bp;
 
 body {
   margin: 0;

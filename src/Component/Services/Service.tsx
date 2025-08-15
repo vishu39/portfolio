@@ -1,10 +1,12 @@
-import { forwardRef } from "react"
-import "./service.scss"
+import { forwardRef } from "react";
+import "./service.scss";
 
-const Service = forwardRef<HTMLDivElement, any>((ref) => {
+const Service = forwardRef<HTMLDivElement, {}>((_props, ref) => {
     return (
-        <div ref={ref} id="serviceMain">Service</div>
-    )
-})
+        <div ref={ref} id="serviceMain">
+            Service
+        </div>
+    );
+});
 
-export default Service
+export default Service;

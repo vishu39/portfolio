@@ -1,9 +1,12 @@
-import { forwardRef } from "react"
-import "./about.scss"
-const About = forwardRef<HTMLDivElement, any>((ref) => {
-    return (
-        <div ref={ref} id="aboutMain">About</div>
-    )
-})
+import { forwardRef } from "react";
+import "./about.scss";
 
-export default About
+const About = forwardRef<HTMLDivElement, any>((_props, ref) => {
+    return (
+        <div ref={ref} id="aboutMain">
+            About
+        </div>
+    );
+});
+
+export default About;
