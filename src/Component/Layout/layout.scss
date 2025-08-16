@@ -1,28 +1,28 @@
 .main {
-    background-color: black;
-    height: 100%;
-    overflow-y: scroll;
+  background-color: black;
+  height: 100%;
+  overflow-y: scroll;
 
-    .nav {
-        display: flex;
-        gap: 40px;
-        padding: 24px;
-        background-color: #cc005f;
-        color: white;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        position: fixed;
-        top: 0;
+  .nav {
+    display: flex;
+    // gap: 40px;
+    padding: 24px;
+    background-color: #cc005f;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    top: 0;
 
-        .navList {
-            display: flex;
-            justify-content: space-between;
+    .navList {
+      display: flex;
+      justify-content: space-between;
 
-            span {
-                text-decoration: underline;
-                cursor: pointer;
-            }
-        }
+      span {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
+  }
 }

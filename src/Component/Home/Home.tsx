@@ -35,7 +35,7 @@ const Home = forwardRef<HTMLDivElement, {}>((_props, ref) => {
       <p style={{ color: "#cc005f" }}> HELLO, WORLD.</p>
       <h1>I'm Vishu Sharma.</h1>
       <div>
-        <p>| Front-End Developer |</p>
+        <p>| Full-Stack Developer |</p>
       </div>
 
       <div className="btnDiv">

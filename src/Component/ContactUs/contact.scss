@@ -1,32 +1,30 @@
+@use "../../styles/breakpoint" as bp;
+
 #contactMain {
   height: 100vh;
   color: white;
   padding: 24px;
-  // display: flex;
+  display: flex;
+  box-shadow: 0 0.5px 0 #cc005f;
   // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  justify-content: center;
+  align-items: center;
 
-  // .btnDiv {
-  //   display: flex;
-  //   justify-content: center;
+  @include bp.md {
+    padding: 40px;
+  }
 
-  //   .moreAboutMeBtn {
-  //     padding: 12px;
-  //     background-color: #cc005f;
-  //     color: white;
-  //     border-radius: 8px;
-  //     cursor: pointer;
-  //     display: flex;
-  //     align-items: center;
-  //     gap: 12px;
-  //     border: 1px solid white;
+  @include bp.lg {
+    padding: 50px;
+  }
 
-  //     .icon {
-  //       font-size: 12px;
-  //     }
-  //   }
-  // }
+  @include bp.xl {
+    padding: 60px;
+  }
+
+  @include bp.xxl {
+    padding: 70px;
+  }
 
   .commonIconCss {
     width: 50px;
@@ -41,13 +39,21 @@
   }
 
   .grid1x2 {
+    width: 100%;
     display: grid;
     grid-template-columns: 100%;
     gap: 24px;
+    justify-content: space-evenly;
+    place-items: center;
+
+    @include bp.md {
+      grid-template-columns: 40% 60%;
+    }
     .left {
       width: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       row-gap: 60px;
       .addressDiv {
         display: flex;
@@ -84,6 +90,7 @@
       width: 100%;
 
       .contactCard {
+        width: 100%;
         min-height: 200px;
         border-radius: 10px;
         background-color: #cc005f;
@@ -96,4 +103,8 @@
       }
     }
   }
+}
+
+.my-form .ant-form-item-label > label {
+  color: white;
 }

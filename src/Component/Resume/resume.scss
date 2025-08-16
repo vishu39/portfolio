@@ -1,32 +1,11 @@
 @use "../../styles/breakpoint" as bp;
 
 #resumeMain {
-    height: 100vh;
-    background-color: lightgrey;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    //   .btnDiv {
-    //     display: flex;
-    //     justify-content: center;
-
-    //     .moreAboutMeBtn {
-    //       padding: 12px;
-    //       background-color: #cc005f;
-    //       color: white;
-    //       border-radius: 8px;
-    //       cursor: pointer;
-    //       display: flex;
-    //       align-items: center;
-    //       gap: 12px;
-    //       border: 1px solid white;
-
-    //       .icon {
-    //         font-size: 12px;
-    //       }
-    //     }
-    //   }
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.5px 0 #cc005f;
 }

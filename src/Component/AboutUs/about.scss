@@ -1,31 +1,28 @@
 @use "../../styles/breakpoint" as bp;
 
 #aboutMain {
-    height: 100vh;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-shadow: 0 0.5px 0 #cc005f;
 
-    //   .btnDiv {
-    //     display: flex;
-    //     justify-content: center;
+  @include bp.md {
+    padding: 40px;
+  }
 
-    //     .moreAboutMeBtn {
-    //       padding: 12px;
-    //       background-color: #cc005f;
-    //       color: white;
-    //       border-radius: 8px;
-    //       cursor: pointer;
-    //       display: flex;
-    //       align-items: center;
-    //       gap: 12px;
-    //       border: 1px solid white;
+  @include bp.lg {
+    padding: 50px;
+  }
 
-    //       .icon {
-    //         font-size: 12px;
-    //       }
-    //     }
-    //   }
+  @include bp.xl {
+    padding: 60px;
+  }
+
+  @include bp.xxl {
+    padding: 70px;
+  }
 }
