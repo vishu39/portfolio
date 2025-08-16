@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import "./about.scss";
-import { Flex, Progress, Tooltip } from "antd";
+import { Progress, Tooltip } from "antd";
 
 const About = forwardRef<HTMLDivElement, any>((_props, ref) => {
   return (
