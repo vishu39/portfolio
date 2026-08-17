@@ -1,33 +1,319 @@
 @use "./styles/breakpoint" as bp;
+@use "./styles/themes";
 
-body {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
+:root {
+  --font-main: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Sora", "Plus Jakarta Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+  /* Stops iOS from auto-inflating text in landscape */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  background-image:
+    radial-gradient(ellipse 80% 55% at 12% -5%, rgba(var(--accent-rgb), var(--bloom-a)) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 92% 18%, rgba(var(--accent-strong-rgb), var(--bloom-a)) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 45% at 50% 62%, rgba(var(--accent-2-rgb), calc(var(--bloom-a) * 0.5)) 0%, transparent 62%),
+    radial-gradient(ellipse 60% 40% at 8% 96%, rgba(var(--warm-rgb), calc(var(--bloom-a) * 0.4)) 0%, transparent 55%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+  background-attachment: scroll;
+  transition: background-color 0.35s ease, color 0.35s ease;
+
+  /* `fixed` blooms look better on desktop but break scrolling on iOS */
+  @include bp.lg {
+    background-attachment: fixed, fixed, fixed, fixed, scroll, scroll;
+  }
 }
 
 #root {
-  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.hide-scrollbar {
-  overflow: auto;
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  /* Long words (URLs, compound titles) must never widen the page */
+  overflow-wrap: break-word;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-  /* Safari and Chrome */
+::selection {
+  background: rgba(var(--accent-rgb), 0.35);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+p {
+  color: var(--text-secondary);
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  filter: var(--glow-text);
+}
+
+.gradient-funky-text {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-2),
+    var(--success),
+    var(--accent-soft),
+    var(--accent)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbowText 9s linear infinite;
+  filter: var(--glow-text);
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(22px) saturate(1.2);
+  -webkit-backdrop-filter: blur(22px) saturate(1.2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), border-color 0.3s ease,
+    box-shadow 0.4s var(--ease-out), background 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: var(--gradient-line);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-color-hover);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+/* Section Header Badge */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  border-radius: 9999px;
+  color: var(--accent-soft);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 18px;
+  box-shadow: var(--glow-accent), inset 0 0 20px -12px rgba(var(--accent-rgb), 0.9);
+
+  @include bp.sm {
+    font-size: 0.74rem;
+  }
+}
+
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+
+  @include bp.sm {
+    font-size: 2.2rem;
+  }
+
+  @include bp.md {
+    font-size: 3.1rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  max-width: 660px;
+  margin-bottom: 44px;
+  line-height: 1.65;
+
+  @include bp.sm {
+    font-size: 1.02rem;
+  }
+
+  @include bp.md {
+    font-size: 1.12rem;
+  }
+}
+
+/* Keyframes */
+@keyframes rainbowText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatFunky {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes floatFunkyAlt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-2deg); }
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+}
+
+/* AntD Overrides */
+.ant-form-item-label > label {
+  color: var(--text-light) !important;
+  font-weight: 700;
+}
+
+.ant-input, .ant-input-affix-wrapper, .ant-input-textarea textarea {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color-strong) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 11px 16px;
+  font-family: var(--font-main);
+  /* 16px keeps iOS Safari from zooming in on focus */
+  font-size: 16px;
+  transition: all 0.25s ease;
+
+  @include bp.sm {
+    font-size: 0.95rem;
+  }
+
+  /* AntD's default placeholder is far too dim on this canvas */
+  &::placeholder,
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 1;
+  }
+
+  &:focus, &:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.35) !important;
+  }
+}
+
+/* Drawer surfaces follow the active theme */
+.mobile-nav-drawer {
+  .ant-drawer-content,
+  .ant-drawer-body {
+    background: var(--bg-secondary) !important;
+  }
+
+  .ant-drawer-header {
+    background: var(--bg-deep) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+
+  .ant-drawer-title,
+  .ant-drawer-close {
+    color: var(--text-primary) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

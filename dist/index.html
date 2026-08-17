@@ -2,13 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="" />
+    <link rel="icon" type="image/svg+xml" href="./assets/react-35ef61ed.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <script type="module" crossorigin src="./assets/index-33e018bc.js"></script>
-    <link rel="stylesheet" href="./assets/index-07eb8642.css">
+    <meta name="description" content="Vishu Sharma - Full Stack Developer with 4.5+ years of experience in React, Angular, Node.js, Ionic, MongoDB, and AI/OCR systems." />
+    <meta name="keywords" content="Vishu Sharma, Full Stack Developer, React Developer, Angular Developer, Node.js, Ionic, Portfolio" />
+    <meta name="author" content="Vishu Sharma" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#05060f">
+    
+    <title>Vishu Sharma | Full Stack Developer (React • Angular • Node.js • Ionic)</title>
+    <script type="module" crossorigin src="./assets/index-d4d56c3b.js"></script>
+    <link rel="stylesheet" href="./assets/index-4459a7d5.css">
   </head>
   <body>
+    <script>
+      /* Apply the saved theme before first paint so there is no flash */
+      (function () {
+        var THEMES = ["midnight", "emerald", "nebula", "daylight", "sand", "mist"];
+        var t;
+        try {
+          t = localStorage.getItem("vs-portfolio-theme");
+        } catch (e) {}
+        if (THEMES.indexOf(t) === -1) {
+          t =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "daylight"
+              : "midnight";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <div id="root"></div>
     
   </body>

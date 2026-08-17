@@ -1,27 +1,367 @@
-.main {
-  background-color: black;
-  height: 100%;
-  overflow-y: scroll;
+@use "../../styles/breakpoint" as bp;
 
-  .nav {
-    display: flex;
-    // gap: 40px;
-    padding: 24px;
-    background-color: #cc005f;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+.portfolio-app-root {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+
+  .navbar-header {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 14px 16px;
+    transition: all 0.3s ease;
+    width: 100%;
 
-    .navList {
+    @include bp.md {
+      padding: 18px 24px;
+    }
+
+    &.scrolled {
+      padding: 10px 16px;
+      background: rgba(var(--bg-primary-rgb), 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 4px 28px rgba(var(--shadow-rgb), 0.6);
+
+      @include bp.md {
+        padding: 12px 24px;
+      }
+    }
+
+    .navbar-container {
+      max-width: 1240px;
+      margin: 0 auto;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      width: 100%;
 
-      span {
-        text-decoration: underline;
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         cursor: pointer;
+
+        .brand-logo-icon {
+          width: 38px;
+          height: 38px;
+          border-radius: 12px;
+          background: var(--gradient-brand);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 900;
+          font-size: 1rem;
+          color: var(--on-accent);
+          box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.45);
+        }
+
+        .brand-text {
+          display: flex;
+          flex-direction: column;
+
+          .brand-name {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            line-height: 1.2;
+          }
+
+          .brand-tag {
+            font-size: 0.72rem;
+            color: var(--accent-2);
+            font-weight: 700;
+          }
+        }
+      }
+
+      .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+
+        @include bp.md {
+          gap: 10px;
+        }
+      }
+
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: rgba(var(--bg-tertiary-rgb), 0.6);
+        border: 1px solid var(--border-color);
+        padding: 4px 6px;
+        border-radius: 9999px;
+        backdrop-filter: blur(14px);
+
+        .nav-link {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 7px 15px;
+          border-radius: 9999px;
+          background: transparent;
+          border: none;
+          color: var(--text-secondary);
+          font-size: 0.85rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          .nav-icon {
+            font-size: 0.9rem;
+          }
+
+          &:hover {
+            color: var(--text-primary);
+          }
+
+          &.active {
+            color: var(--text-primary);
+            background: rgba(var(--accent-rgb), 0.2);
+
+            .active-glow-pill {
+              position: absolute;
+              bottom: 3px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 14px;
+              height: 2px;
+              background: var(--accent);
+              border-radius: 9999px;
+              box-shadow: 0 0 8px var(--accent);
+            }
+          }
+        }
+      }
+
+      .mobile-menu-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--surface-2);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.15rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: var(--neon-pink);
+          border-color: var(--neon-pink);
+          color: var(--on-accent);
+        }
+      }
+    }
+  }
+
+  .content-container {
+    flex: 1;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .portfolio-footer {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border-color);
+    padding: 50px 16px 24px;
+    width: 100%;
+
+    @include bp.md {
+      padding: 60px 24px 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .footer-brand {
+        text-align: center;
+
+        h4 {
+          font-size: 1.35rem;
+          color: var(--text-primary);
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 0.88rem;
+          color: var(--text-muted);
+        }
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+
+        span {
+          color: var(--text-secondary);
+          font-size: 0.88rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: var(--accent-soft);
+          }
+        }
+      }
+
+      .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+
+        @include bp.md {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        p {
+          font-size: 0.8rem;
+          color: var(--text-muted);
+          margin: 0;
+          text-align: center;
+        }
+
+        .scroll-top-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 16px;
+          border-radius: 9999px;
+          background: var(--surface-2);
+          border: 1px solid var(--border-color);
+          color: var(--text-light);
+          font-size: 0.8rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: var(--gradient-brand);
+            border-color: transparent;
+            color: var(--on-accent);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Drawer Custom Styles */
+.drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-weight: 800;
+
+  .brand-logo-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--gradient-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+
+    .drawer-icon {
+      font-size: 1.15rem;
+      color: var(--accent-soft);
+    }
+
+    &:hover, &.active {
+      background: rgba(var(--accent-rgb), 0.18);
+      border-color: rgba(var(--accent-rgb), 0.4);
+      color: var(--text-primary);
+    }
+  }
+}
+
+.drawer-theme-block {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color);
+}
+
+.drawer-footer {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color);
+
+  .drawer-footer-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .drawer-socials {
+    display: flex;
+    gap: 10px;
+
+    a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 1.1rem;
+
+      &:hover {
+        background: var(--neon-pink);
+        color: var(--on-accent);
       }
     }
   }

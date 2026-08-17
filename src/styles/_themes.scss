@@ -1,0 +1,426 @@
+/* =========================================================
+   Theme palettes
+   Every theme only overrides *primitive* tokens. Gradients,
+   glows, shadows and legacy aliases are derived once at the
+   bottom in terms of those primitives, so they re-resolve
+   automatically when [data-theme] changes on <html>.
+   ========================================================= */
+
+/* ---------- DARK 1 · Aurora Midnight (default) ---------- */
+:root,
+[data-theme="midnight"] {
+  color-scheme: dark;
+
+  --bg-primary: #05060f;
+  --bg-secondary: #0a0c1a;
+  --bg-tertiary: #121628;
+  --bg-elevated: #161b30;
+  --bg-deep: #04050c;
+  --bg-primary-rgb: 5, 6, 15;
+  --bg-secondary-rgb: 10, 12, 26;
+  --bg-tertiary-rgb: 18, 22, 40;
+  --bg-elevated-rgb: 22, 27, 48;
+
+  --bg-card: rgba(13, 16, 32, 0.88);
+  --bg-card-hover: rgba(24, 29, 54, 0.94);
+
+  --surface-1: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.075);
+  --surface-3: rgba(255, 255, 255, 0.12);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-strong: rgba(255, 255, 255, 0.18);
+
+  --text-primary: #f6f8fd;
+  --text-light: #dde4f2;
+  --text-secondary: #b6c0d8;
+  --text-muted: #8d97b0;
+  --text-faint: #6d7793;
+  --on-accent: #ffffff;
+
+  --accent: #a259ff;
+  --accent-soft: #cbb6ff;
+  --accent-strong: #6a2bff;
+  --accent-rgb: 162, 89, 255;
+  --accent-strong-rgb: 106, 43, 255;
+
+  --accent-2: #00e5ff;
+  --accent-2-soft: #7df0ff;
+  --accent-2-rgb: 0, 229, 255;
+
+  --success: #2dffb3;
+  --success-soft: #7cffd0;
+  --success-rgb: 45, 255, 179;
+
+  --warm: #ffc857;
+  --warm-strong: #ff7d3b;
+  --warm-rgb: 255, 200, 87;
+
+  --info: #3d9bff;
+
+  --shadow-rgb: 0, 0, 0;
+  --shadow-alpha: 0.85;
+  --glow-alpha: 0.45;
+  --bloom-a: 0.2;
+  --grid-line: rgba(255, 255, 255, 0.022);
+}
+
+/* ---------- DARK 2 · Neon Emerald ---------- */
+[data-theme="emerald"] {
+  color-scheme: dark;
+
+  --bg-primary: #04100e;
+  --bg-secondary: #071815;
+  --bg-tertiary: #0c221e;
+  --bg-elevated: #10302a;
+  --bg-deep: #020b09;
+  --bg-primary-rgb: 4, 16, 14;
+  --bg-secondary-rgb: 7, 24, 21;
+  --bg-tertiary-rgb: 12, 34, 30;
+  --bg-elevated-rgb: 16, 48, 42;
+
+  --bg-card: rgba(8, 26, 22, 0.88);
+  --bg-card-hover: rgba(14, 40, 34, 0.94);
+
+  --surface-1: rgba(255, 255, 255, 0.045);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --surface-3: rgba(255, 255, 255, 0.13);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-strong: rgba(255, 255, 255, 0.18);
+
+  --text-primary: #f0fdf9;
+  --text-light: #d7f0e8;
+  --text-secondary: #a8ccc2;
+  --text-muted: #7fa79c;
+  --text-faint: #648a80;
+  --on-accent: #04100e;
+
+  --accent: #00ffa3;
+  --accent-soft: #7cffd0;
+  --accent-strong: #00b87a;
+  --accent-rgb: 0, 255, 163;
+  --accent-strong-rgb: 0, 184, 122;
+
+  --accent-2: #22e0ff;
+  --accent-2-soft: #96f0ff;
+  --accent-2-rgb: 34, 224, 255;
+
+  --success: #58ff9a;
+  --success-soft: #b6ffcf;
+  --success-rgb: 88, 255, 154;
+
+  --warm: #ffd166;
+  --warm-strong: #ff8a4c;
+  --warm-rgb: 255, 209, 102;
+
+  --info: #35c8ff;
+
+  --shadow-rgb: 0, 0, 0;
+  --shadow-alpha: 0.85;
+  --glow-alpha: 0.4;
+  --bloom-a: 0.18;
+  --grid-line: rgba(255, 255, 255, 0.02);
+}
+
+/* ---------- DARK 3 · Nebula Sunset ---------- */
+[data-theme="nebula"] {
+  color-scheme: dark;
+
+  --bg-primary: #0b0410;
+  --bg-secondary: #14071c;
+  --bg-tertiary: #1d0c28;
+  --bg-elevated: #2a1239;
+  --bg-deep: #070209;
+  --bg-primary-rgb: 11, 4, 16;
+  --bg-secondary-rgb: 20, 7, 28;
+  --bg-tertiary-rgb: 29, 12, 40;
+  --bg-elevated-rgb: 42, 18, 57;
+
+  --bg-card: rgba(24, 9, 33, 0.88);
+  --bg-card-hover: rgba(38, 16, 52, 0.94);
+
+  --surface-1: rgba(255, 255, 255, 0.045);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --surface-3: rgba(255, 255, 255, 0.13);
+  --border-color: rgba(255, 255, 255, 0.11);
+  --border-color-strong: rgba(255, 255, 255, 0.19);
+
+  --text-primary: #fdf2fb;
+  --text-light: #f0d9ec;
+  --text-secondary: #cbaec6;
+  --text-muted: #a184a0;
+  --text-faint: #7f6880;
+  --on-accent: #ffffff;
+
+  --accent: #ff4ecd;
+  --accent-soft: #ffb0ea;
+  --accent-strong: #a01fb8;
+  --accent-rgb: 255, 78, 205;
+  --accent-strong-rgb: 160, 31, 184;
+
+  --accent-2: #ffa14a;
+  --accent-2-soft: #ffd0a8;
+  --accent-2-rgb: 255, 161, 74;
+
+  --success: #4ade80;
+  --success-soft: #a7f3c8;
+  --success-rgb: 74, 222, 128;
+
+  --warm: #ffb454;
+  --warm-strong: #ff6b3d;
+  --warm-rgb: 255, 180, 84;
+
+  --info: #a78bfa;
+
+  --shadow-rgb: 0, 0, 0;
+  --shadow-alpha: 0.85;
+  --glow-alpha: 0.45;
+  --bloom-a: 0.2;
+  --grid-line: rgba(255, 255, 255, 0.022);
+}
+
+/* ---------- LIGHT 1 · Daylight ---------- */
+[data-theme="daylight"] {
+  color-scheme: light;
+  --orb-opacity: 0.5;
+
+  --bg-primary: #f7f8fc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eef1f8;
+  --bg-elevated: #ffffff;
+  --bg-deep: #e8ecf6;
+  --bg-primary-rgb: 247, 248, 252;
+  --bg-secondary-rgb: 255, 255, 255;
+  --bg-tertiary-rgb: 238, 241, 248;
+  --bg-elevated-rgb: 255, 255, 255;
+
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: #ffffff;
+
+  --surface-1: rgba(15, 23, 42, 0.035);
+  --surface-2: rgba(15, 23, 42, 0.06);
+  --surface-3: rgba(15, 23, 42, 0.1);
+  --border-color: rgba(15, 23, 42, 0.1);
+  --border-color-strong: rgba(15, 23, 42, 0.18);
+
+  --text-primary: #0f172a;
+  --text-light: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --on-accent: #ffffff;
+
+  --accent: #7c3aed;
+  --accent-soft: #5b21b6;
+  --accent-strong: #4c1d95;
+  --accent-rgb: 124, 58, 237;
+  --accent-strong-rgb: 76, 29, 149;
+
+  --accent-2: #0e7490;
+  --accent-2-soft: #155e75;
+  --accent-2-rgb: 14, 116, 144;
+
+  --success: #047857;
+  --success-soft: #065f46;
+  --success-rgb: 4, 120, 87;
+
+  --warm: #b45309;
+  --warm-strong: #c2410c;
+  --warm-rgb: 180, 83, 9;
+
+  --info: #1d4ed8;
+
+  --shadow-rgb: 30, 41, 90;
+  --shadow-alpha: 0.14;
+  --glow-alpha: 0.12;
+  --bloom-a: 0.09;
+  --grid-line: rgba(15, 23, 42, 0.03);
+}
+
+/* ---------- LIGHT 2 · Warm Sand ---------- */
+[data-theme="sand"] {
+  color-scheme: light;
+  --orb-opacity: 0.5;
+
+  --bg-primary: #fdf8f1;
+  --bg-secondary: #fffdfa;
+  --bg-tertiary: #f5ece0;
+  --bg-elevated: #ffffff;
+  --bg-deep: #efe2d2;
+  --bg-primary-rgb: 253, 248, 241;
+  --bg-secondary-rgb: 255, 253, 250;
+  --bg-tertiary-rgb: 245, 236, 224;
+  --bg-elevated-rgb: 255, 255, 255;
+
+  --bg-card: rgba(255, 253, 250, 0.92);
+  --bg-card-hover: #ffffff;
+
+  --surface-1: rgba(69, 42, 20, 0.04);
+  --surface-2: rgba(69, 42, 20, 0.07);
+  --surface-3: rgba(69, 42, 20, 0.11);
+  --border-color: rgba(69, 42, 20, 0.13);
+  --border-color-strong: rgba(69, 42, 20, 0.22);
+
+  --text-primary: #2a1c10;
+  --text-light: #3f2d1d;
+  --text-secondary: #6b5541;
+  --text-muted: #8a7460;
+  --text-faint: #a89482;
+  --on-accent: #ffffff;
+
+  --accent: #c2410c;
+  --accent-soft: #9a3412;
+  --accent-strong: #7c2d12;
+  --accent-rgb: 194, 65, 12;
+  --accent-strong-rgb: 124, 45, 18;
+
+  --accent-2: #0f766e;
+  --accent-2-soft: #115e59;
+  --accent-2-rgb: 15, 118, 110;
+
+  --success: #15803d;
+  --success-soft: #166534;
+  --success-rgb: 21, 128, 61;
+
+  --warm: #a16207;
+  --warm-strong: #b45309;
+  --warm-rgb: 161, 98, 7;
+
+  --info: #1d4ed8;
+
+  --shadow-rgb: 80, 50, 20;
+  --shadow-alpha: 0.16;
+  --glow-alpha: 0.12;
+  --bloom-a: 0.1;
+  --grid-line: rgba(69, 42, 20, 0.035);
+}
+
+/* ---------- LIGHT 3 · Cool Mist ---------- */
+[data-theme="mist"] {
+  color-scheme: light;
+  --orb-opacity: 0.5;
+
+  --bg-primary: #f1f6f9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e4eef3;
+  --bg-elevated: #ffffff;
+  --bg-deep: #d8e6ed;
+  --bg-primary-rgb: 241, 246, 249;
+  --bg-secondary-rgb: 255, 255, 255;
+  --bg-tertiary-rgb: 228, 238, 243;
+  --bg-elevated-rgb: 255, 255, 255;
+
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: #ffffff;
+
+  --surface-1: rgba(8, 32, 43, 0.04);
+  --surface-2: rgba(8, 32, 43, 0.07);
+  --surface-3: rgba(8, 32, 43, 0.11);
+  --border-color: rgba(8, 32, 43, 0.11);
+  --border-color-strong: rgba(8, 32, 43, 0.2);
+
+  --text-primary: #08202b;
+  --text-light: #123544;
+  --text-secondary: #3b6072;
+  --text-muted: #5b7d8c;
+  --text-faint: #85a1ad;
+  --on-accent: #ffffff;
+
+  --accent: #0e7490;
+  --accent-soft: #155e75;
+  --accent-strong: #164e63;
+  --accent-rgb: 14, 116, 144;
+  --accent-strong-rgb: 22, 78, 99;
+
+  --accent-2: #4338ca;
+  --accent-2-soft: #3730a3;
+  --accent-2-rgb: 67, 56, 202;
+
+  --success: #047857;
+  --success-soft: #065f46;
+  --success-rgb: 4, 120, 87;
+
+  --warm: #b45309;
+  --warm-strong: #c2410c;
+  --warm-rgb: 180, 83, 9;
+
+  --info: #1d4ed8;
+
+  --shadow-rgb: 10, 50, 70;
+  --shadow-alpha: 0.15;
+  --glow-alpha: 0.12;
+  --bloom-a: 0.1;
+  --grid-line: rgba(8, 32, 43, 0.035);
+}
+
+/* =========================================================
+   Derived tokens — defined once, resolved per active theme
+   ========================================================= */
+:root {
+  --border-color-hover: rgba(var(--accent-rgb), 0.55);
+  /* Light themes tone the hero glow orbs down (overridden below) */
+  --orb-opacity: 1;
+
+  /* Violet/brand ramp is the only one safe for --on-accent text */
+  --gradient-brand: linear-gradient(
+    135deg,
+    var(--accent-strong) 0%,
+    var(--accent) 55%,
+    var(--accent-strong) 100%
+  );
+  --gradient-funky: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--info) 55%,
+    var(--accent-2) 100%
+  );
+  --gradient-sunset: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--warm-strong) 55%,
+    var(--warm) 100%
+  );
+  --gradient-electric: linear-gradient(
+    135deg,
+    var(--accent-strong) 0%,
+    var(--info) 50%,
+    var(--accent-2) 100%
+  );
+  --gradient-lime: linear-gradient(135deg, var(--accent-2) 0%, var(--success) 100%);
+  --gradient-text: linear-gradient(
+    120deg,
+    var(--accent-soft) 0%,
+    var(--accent) 32%,
+    var(--accent-2) 68%,
+    var(--success) 100%
+  );
+  --gradient-line: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--accent-rgb), 0.55),
+    rgba(var(--accent-2-rgb), 0.45),
+    transparent
+  );
+
+  --glow-accent: 0 0 22px rgba(var(--accent-rgb), var(--glow-alpha));
+  --glow-cyan: 0 0 22px rgba(var(--accent-2-rgb), var(--glow-alpha));
+  --glow-text: drop-shadow(0 0 16px rgba(var(--accent-rgb), var(--glow-alpha)));
+
+  --shadow-card: 0 18px 50px -20px rgba(var(--shadow-rgb), var(--shadow-alpha));
+  --shadow-funky: 0 14px 40px -12px rgba(var(--accent-rgb), 0.45);
+  --shadow-glow: 0 0 0 1px rgba(var(--accent-rgb), 0.18),
+    0 20px 60px -22px rgba(var(--accent-rgb), 0.5);
+
+  /* Legacy aliases kept so older component rules keep working */
+  --neon-pink: var(--accent);
+  --neon-purple: var(--accent-soft);
+  --neon-violet: var(--accent-strong);
+  --neon-cyan: var(--accent-2);
+  --neon-blue: var(--info);
+  --neon-orange: var(--warm-strong);
+  --neon-yellow: var(--warm);
+  --neon-lime: var(--success);
+  --accent-indigo: var(--accent-strong);
+  --accent-indigo-light: var(--accent-soft);
+  --accent-cyan-light: var(--accent-2-soft);
+  --accent-emerald-light: var(--success-soft);
+}

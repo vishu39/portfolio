@@ -1,11 +1,10 @@
-// ant design default breakpoints
-
+// Responsive Breakpoints
 $xs: 480px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
-$xxl: 1600px;
+$xxl: 1400px;
 
 @mixin xs {
   @media (min-width: #{$xs}) {
